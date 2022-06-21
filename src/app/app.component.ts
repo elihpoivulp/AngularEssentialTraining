@@ -16,6 +16,7 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent implements OnInit {
   query: String;
   artists: Array<any>;
+  currentArtist: any;
 
   constructor(private http: HttpClient) {
     this.query = '';
@@ -32,5 +33,6 @@ export class AppComponent implements OnInit {
   showArtist(artist: any): void {
     this.query = artist.name;
     artist.highlight = !artist.highlight;
+    this.currentArtist = artist;
   }
 }
