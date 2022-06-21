@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-artist-items',
-  templateUrl: './artist-items.component.html'
+  templateUrl: './artist-items.component.html',
+  inputs: ['artist'],
 })
 export class ArtistItemsComponent implements OnInit {
+  artist: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

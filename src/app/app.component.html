@@ -24,18 +24,11 @@
           <a
             href="#"
             class="list-group-item list-group-item-action flex-column-align-items-start"
-            *ngFor="let artist of artists"
+            *ngFor="let artist of (artists | searchArtists: query)"
             (click)="showArtist(artist)"
             [style.backgroundColor]="artist.highlight ? '#eee' : '#fff'"
           >
-            <div class="media">
-              <img [src]="'./assets/images/' + artist.shortname + '_tn.jpg'" class="mr-3 rounded align-self-center img-fluid"
-                   style="width: 70px" alt="Photo of {{ artist.shortname }}">
-              <div class="media-body align-self-center">
-                <h5 class="m-0">{{ artist.name }}</h5>
-                {{ artist.reknown }}
-              </div>
-            </div>
+          <app-artist-items [artist]="artist"></app-artist-items>
           </a>
         </div>
       </div>
